@@ -1,0 +1,9 @@
+# weights are downloaded, never committed (see kprpe_face/download.py)
+kprpe_face/weights/
+*.safetensors
+*.part
+__pycache__/
+*.egg-info/
+build/
+dist/
+.DS_Store

@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kprpe-face"
+version = "0.1.0"
+description = "Standalone KP-RPE ViT-B face descriptor (weights downloaded on first use; non-commercial research only)"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+requires-python = ">=3.9"
+authors = [{name = "Denis Rybalchenko"}]
+dependencies = ["numpy", "opencv-python", "torch", "safetensors"]
+
+[project.urls]
+Homepage = "https://github.com/rydenisbak/kprpe_face_rec"
+
+[project.scripts]
+kprpe-face-download = "kprpe_face.download:main"
+
+[tool.setuptools]
+packages = ["kprpe_face"]
+# code only: the weights are never packaged (they are downloaded from the authors' repo, see kprpe_face/download.py)
+include-package-data = false
